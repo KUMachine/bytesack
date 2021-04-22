@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
     purge: [
         './pages/**/*.{js,jsx,ts,tsx}',
@@ -7,8 +8,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                dark: '#222831',
-                light: '#eeeeee',
+                dark: colors.blueGray[800],
+                light: '#fefefe',
+                lime: colors.lime,
+                coolgray: colors.coolGray,
+                lightblue: colors.lightBlue,
+                cyan: colors.cyan,
+                teal: colors.teal,
             },
         },
     },

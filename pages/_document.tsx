@@ -16,7 +16,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head />
-                <body className="font-roboto" id="body">
+                <body className="font-nunito" id="body">
                     <Main />
                     <NextScript />
                 </body>
