@@ -9,7 +9,7 @@ module.exports = {
         extend: {
             colors: {
                 dark: colors.blueGray[800],
-                light: '#fefefe',
+                light: '#fafafa',
                 lime: colors.lime,
                 coolgray: colors.coolGray,
                 lightblue: colors.lightBlue,

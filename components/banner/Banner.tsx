@@ -17,7 +17,7 @@ const Banner = ({}: BannerProps) => {
                 </div>
                 <div className="mx-auto py-4 w-full md:w-1/2">
                     <img
-                        src="/page-build-illustration-png.png"
+                        src="/banner-illustration.webp"
                         alt="bytesack banner page build image"
                         className="w-4/5 md:w-full mx-auto"
                     />

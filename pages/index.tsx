@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Prisma } from '@prisma/client'
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../components/header/Header'
@@ -8,11 +8,6 @@ import Banner from '../components/banner/Banner'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const prisma = new PrismaClient()
-    const post = await prisma.post.findFirst({
-        where: {
-            published: true,
-        },
-    })
     await prisma.$disconnect()
     return {
         props: {
@@ -24,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 }
 
-export default function Home() {
+export default function Home(props: any) {
     return (
         <div>
             <Head>
