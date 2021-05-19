@@ -24,13 +24,13 @@ export default function Home(props: any) {
     return (
         <div>
             <Head>
-                <title>Bytesack</title>
+                <title>Bytesack - Login</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header className="" />
-            <main className="bg-light dark:bg-dark h-screen">
-                <Banner />
-                <Services />
+            <main className="bg-light h-screen">
+                <div className="absolute top-1/2 left-1/2 bg-coolgray-200 shadow-md">
+                    login
+                </div>
             </main>
         </div>
     )

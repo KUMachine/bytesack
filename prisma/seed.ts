@@ -7,12 +7,14 @@ async function main() {
         where: { email: 'alice@prisma.io' },
         update: {},
         create: {
-            email: `alice@prisma.io`,
-            username: 'username',
-            bio: 'biography',
+            email: `areyan@bytesack.com`,
+            username: 'areyan96',
+            password: 'changeme',
+            role: 'ADMIN',
+            bio: 'young developer living in the dreams',
             Post: {
                 create: {
-                    title: 'Check out Prisma with Next.js',
+                    title: 'Check out Bytesack with Next.js',
                     published: true,
                 },
             },

@@ -50,7 +50,7 @@ const LangToggle = ({ className }: LangToggleProps) => {
                 }
                 trigger={['click']}
             >
-                <div className="text-sm bg-gray-300 dark:bg-gray-600 overflow-hidden hover:shadow-md p-1 border rounded-lg border-gray-400 dark:border-gray-500 text-gray-600 dark:text-gray-300 cursor-pointer">
+                <div className="text-sm overflow-hidden hover:shadow-md p-1 border-2 rounded-lg border-gray-300 dark:border-gray-400 text-gray-600 dark:text-gray-300 cursor-pointer">
                     {<LangIcon size="20" />}
                 </div>
             </Dropdown>
