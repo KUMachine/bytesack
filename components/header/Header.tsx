@@ -3,12 +3,14 @@ import DarkModeToggle from './DarkModeToggle'
 import Hamburger from './Hambuerger'
 import LangToggle from './LangToggle'
 import Link from 'next/link'
+import UserAvatar from './UserAvatar'
 
 interface HeaderProps {
     className?: string
+    user?: { email: string; role: string }
 }
 
-const Header = ({ className }: HeaderProps) => {
+const Header = ({ className, user }: HeaderProps) => {
     const { t } = useTranslation()
     return (
         <header className={className} dir={t('dir')}>
@@ -41,8 +43,9 @@ const Header = ({ className }: HeaderProps) => {
                         </ul>
                     </div>
                     <div className="flex items-center font-bold">
-                        <LangToggle />
-                        <DarkModeToggle className="mx-3" />
+                        <LangToggle className="mx-3" />
+                        <DarkModeToggle />
+                        <UserAvatar className="mx-3" user={user} />
                     </div>
                 </div>
             </nav>

@@ -14,7 +14,7 @@ model user {
   password  String
   bio       String
   role      role     @default(USER)
-  Post      post[]
+  posts     post[]
   createdAt DateTime @default(now())
 
   @@map("user")

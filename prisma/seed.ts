@@ -12,7 +12,7 @@ async function main() {
             password: 'changeme',
             role: 'ADMIN',
             bio: 'young developer living in the dreams',
-            Post: {
+            posts: {
                 create: {
                     title: 'Check out Bytesack with Next.js',
                     published: true,
