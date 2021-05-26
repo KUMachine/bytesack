@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../components/header/Header'
 import Banner from '../components/banner/Banner'
 import Services from '../components/services/Services'
-import userAuth from '../utils/userAuth'
+import userAuth from '../utils/useAuth'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const prisma = new PrismaClient()
@@ -33,7 +33,6 @@ export default function Home(props: any) {
             </Head>
             <Header className="" user={props.user} />
             <main className="bg-light dark:bg-dark h-screen">
-                <div>{props.user && props.user.email}</div>
                 <Banner />
                 <Services />
             </main>

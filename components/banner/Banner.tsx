@@ -7,7 +7,7 @@ const Banner = ({}: BannerProps) => {
     return (
         <div className="w-full px-3 bg-[#f5f4fe] border dark:border-0 border-gray-200 dark:bg-lightblue-900">
             <div className="container mx-auto flex md:flex flex-col-reverse md:flex-row items-center">
-                <div className="mx-auto text-center md:text-left py-4 sm:px-10 md:px-0 w-full md:w-1/2">
+                <div className="mx-auto text-center md:text-left py-4 sm:px-10 md:px-6 w-full md:w-1/2">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl text-coolgray-700 dark:text-gray-200 font-black max-w-4xl">
                         {t('MainHeader')}
                     </h1>

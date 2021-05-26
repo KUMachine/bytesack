@@ -19,7 +19,7 @@ const Hamburger = ({ className }: HamburgerProps) => {
                 <MenuIcon size="36" />
             </div>
             {toggle && (
-                <div className="fixed bg-gray-600 bg-opacity-70 p-2 w-full h-full top-0 right-0 z-10 animate__animated animate__fadeIn">
+                <div className="fixed z-40 bg-gray-600 bg-opacity-70 p-2 w-full h-full top-0 right-0 animate__animated animate__fadeIn">
                     <div className="bg-light dark:bg-dark h-1/2 w-full rounded-lg shadow-lg animate__animated animate__fadeInDown">
                         <div
                             className="p-2 text-gray-500 dark:text-gray-400 cursor-pointer"

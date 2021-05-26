@@ -4,7 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Cookie from 'js-cookie'
 import { GetServerSideProps } from 'next'
-import userAuth from '../utils/userAuth'
+import userAuth from '../utils/useAuth'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const user = userAuth(context.req.cookies['bytesack-auth-token'])

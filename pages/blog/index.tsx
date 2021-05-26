@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Post, PrismaClient } from '@prisma/client'
+import { PrismaClient, post } from '@prisma/client'
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../../components/header/Header'
@@ -26,14 +26,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 interface BlogProps {
-    post: Post
+    post: post
 }
 
 export default function Blog({ post }: BlogProps) {
     return (
         <>
             <Header />
-            <main>{post.authorId}</main>
+            <main>{post.title}</main>
         </>
     )
 }
