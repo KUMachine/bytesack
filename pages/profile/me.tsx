@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../../components/header/Header'
 import userAuth from '../../utils/useAuth'
 import { FilePlus, Settings } from 'react-feather'
+import Link from 'next/link'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const prisma = new PrismaClient()
@@ -59,10 +60,14 @@ export default function Me({ user }: MeProps) {
                         </div>
                         <div className="text-5xl font-semibold">{user.bio}</div>
                         <div className="flex my-16">
-                            <div className="flex mx-1 items-center font-bold bg-coolgray-200 text-coolgray-700 text-base p-3 rounded-md">
-                                <FilePlus size="16" />
-                                <span className="mx-0.5">New Post</span>
-                            </div>
+                            <Link href="/blog/new">
+                                <a>
+                                    <div className="flex mx-1 items-center font-bold bg-coolgray-200 text-coolgray-700 text-base p-3 rounded-md">
+                                        <FilePlus size="16" />
+                                        <span className="mx-0.5">New Post</span>
+                                    </div>
+                                </a>
+                            </Link>
                             <div className="flex mx-1 items-center font-bold bg-coolgray-200 text-coolgray-700 text-base p-3 rounded-md">
                                 <Settings size="15" />
                                 <span className="mx-0.5">Setting</span>
