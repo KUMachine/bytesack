@@ -5,6 +5,7 @@ module.exports = {
         './components/**/*.{js,ts,jsx,tsx}',
     ],
     darkMode: 'class', // or 'media' or 'class'
+    mode: 'jit',
     theme: {
         extend: {
             colors: {
@@ -15,6 +16,10 @@ module.exports = {
                 lightblue: colors.lightBlue,
                 cyan: colors.cyan,
                 teal: colors.teal,
+                emerald: colors.emerald,
+                orange: colors.orange,
+                purple: colors.pueple,
+                rose: colors.rose,
             },
         },
     },

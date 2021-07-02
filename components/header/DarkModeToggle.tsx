@@ -35,7 +35,7 @@ const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
                 }
             }}
         >
-            <div className=" overflow-hidden hover:shadow-md p-1 border-2 rounded-lg border-gray-300 dark:border-gray-400 text-gray-600 dark:text-gray-400 cursor-pointer">
+            <div className=" overflow-hidden p-1 border-2 rounded-full border-gray-600 dark:border-gray-400 text-gray-600 dark:text-gray-400 cursor-pointer">
                 {mode === 'dark' && (
                     <Sun
                         size="21"

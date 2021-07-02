@@ -1,0 +1,25 @@
+{
+    "title": "New Post here",
+    "date": "16-5-2019",
+    "author": "areyan naaman",
+    "tags": ["react", "technology", "prisma"],
+    "body": [
+        {
+            "seq": "1",
+            "type": "header",
+            "text": "how to write blogs"
+        },
+        {
+            "seq": "2",
+            "type": "code",
+            "text": "import React form 'react'\nconsole.log('this is js code')\necho \"somethign\"",
+            "language": "typescript"
+        },
+        {
+            "seq": "3",
+            "type": "image",
+            "src": "https://kentcdodds.com/static/5f9b92a74622943da79826df4a49636e/c6969/banner.webp",
+            "alt": "jelly fish in the purple"
+        }
+    ]
+}

@@ -15,7 +15,7 @@ const Header = ({ className, user }: HeaderProps) => {
     return (
         <header className={className} dir={t('dir')}>
             <nav>
-                <div className="flex items-center justify-between border dark:border-0 border-gray-200 bg-light dark:bg-dark">
+                <div className="flex items-center justify-between border-gray-200 bg-lightblue-200 dark:bg-dark">
                     <Hamburger className="md:hidden mx-2" />
                     <div className="flex items-center">
                         <div className="px-5 pb-6 pt-5">
@@ -23,9 +23,11 @@ const Header = ({ className, user }: HeaderProps) => {
                                 Bytesack
                             </span>
                         </div>
-                        <ul className="hidden md:flex my-0 items-center text-lg font-bold text-gray-600 dark:text-gray-300">
+                        <ul className="hidden md:flex my-0 items-center text-2xl font-bold text-gray-600 dark:text-gray-300">
                             <li className="px-2 py-6 hover:text-pink-500">
-                                {t('Home')}
+                                <Link href="/">
+                                    <a>{t('Home')}</a>
+                                </Link>
                             </li>
                             <li className="px-2 py-6 hover:text-pink-500">
                                 <Link href="/blog">
@@ -33,19 +35,15 @@ const Header = ({ className, user }: HeaderProps) => {
                                 </Link>
                             </li>
                             <li className="px-2 py-6 hover:text-pink-500 ">
-                                {t('Business')}
-                            </li>
-                            <li className="px-2 py-6 hover:text-pink-500">
-                                <Link href="/about">
-                                    <a>{t('News')}</a>
+                                <Link href="/services">
+                                    <a>{t('Services')}</a>
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <div className="flex items-center font-bold">
-                        <LangToggle className="mx-3" />
-                        <DarkModeToggle />
-                        <UserAvatar className="mx-3" user={user} />
+                    <div className="flex items-center font-bold md:mx-2">
+                        <LangToggle className="mx-1 md:mx-2" />
+                        <DarkModeToggle className="mx-1 md:mx-2" />
                     </div>
                 </div>
             </nav>

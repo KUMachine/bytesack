@@ -4,9 +4,6 @@ module.exports = {
     i18n,
 }
 module.exports = {
-    // future: {
-    //   webpack5: true,
-    // },
     i18n,
     images: {
         domains: ['picsum.photos'],

@@ -3,19 +3,27 @@ interface ServiceCardProps {
     title: string
     description: string
     image: string | JSX.Element
+    className?: string
 }
 
-const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
+const ServiceCard = ({
+    title,
+    description,
+    image,
+    className = '',
+}: ServiceCardProps) => {
     return (
-        <div className="sm:flex items-center p-3 rounded-lg text-center md:text-left shadow bg-gray-200">
-            <div className="rounded-full p-3 bg-opacity-70 bg-lightblue-300 text-gray-800 border border-gray-400 inline-block sm:self-center">
+        <div
+            className={`items-center p-5 mx-2 md:mx-0 rounded-lg text-center shadow cursor-pointer transform transition hover:scale-105 duration-300 ${className}`}
+        >
+            <div className="rounded-full p-3 bg-opacity-70 bg-lightblue-100 text-gray-800 inline-block sm:self-center">
                 {image}
             </div>
             <div className="p-2">
-                <div className="my-2 text-xl font-bold inline-block border-b border-lightblue-400">
+                <div className="my-2 text-2xl font-bold inline-block">
                     {title}
                 </div>
-                <div className="text-sm">{description}</div>
+                <div className="text-base">{description}</div>
             </div>
         </div>
     )
