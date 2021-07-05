@@ -1,7 +1,7 @@
-import { user } from '.prisma/client'
 import jwt from 'jsonwebtoken'
 
 export default function (token: string) {
+    const user = null
     try {
         const user = jwt.verify(
             token,
@@ -10,7 +10,7 @@ export default function (token: string) {
         if (typeof user === 'string') {
             throw new Error('only expected object found string')
         }
-        return user as user
+        return user
     } catch (ex) {
         return null
     }
