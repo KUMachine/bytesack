@@ -1,35 +1,24 @@
 import Image from 'next/image'
-interface BlogCardProps {
-    title: string
-    description: string
-    image: string
-    className?: string
-    tag?: string
-    tagColor?: string
-    author: string
-    authorImage: string
-    date: string
-    readingTime: string
-}
+import { Post } from 'prisma/prisma-client'
+type BlogCardProps = Post & { className: string }
 
 const BlogCard = ({
     title,
     description,
     image,
     className = '',
-    tag = 'Blog',
-    tagColor = 'purple',
+    tags = ['blog'],
     author,
     authorImage,
-    readingTime,
-    date,
+    readTime,
+    createdAt,
 }: BlogCardProps) => {
     return (
         <div
-            className={`flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer ${className}`}
+            className={`flex flex-col overflow-hidden rounded-lg shadow-lg drop-shadow-xl ${className}`}
         >
             <div
-                className="w-full h-64 bg-pink-400"
+                className="w-full h-64 bg-coolgray-300"
                 style={{
                     backgroundImage: `url(${image})`,
                     backgroundPosition: 'center',
@@ -37,16 +26,20 @@ const BlogCard = ({
                     backgroundSize: 'cover',
                     backgroundClip: 'content-box',
                 }}
-            ></div>
+            />
             <div className="px-8 pt-8 pb-2 flex flex-col justify-between flex-auto">
                 <div>
-                    <div
-                        className="font-bold text-lg py-2"
-                        style={{ color: tagColor }}
-                    >
-                        {tag}
+                    <div className="flex flex-wrap">
+                        {tags.map((tag) => (
+                            <div
+                                key={tag}
+                                className="hover:underline cursor-pointer text-base shadow-inner py-1 px-2 rounded-lg mx-1 bg-cyan-300 text-gray-600 font-bold"
+                            >
+                                #{tag}
+                            </div>
+                        ))}
                     </div>
-                    <hr />
+                    <hr className="my-2" />
                     <div className="text-2xl font-bold py-1">{title}</div>
                     <div className="text-base">{description}</div>
                 </div>
@@ -60,7 +53,8 @@ const BlogCard = ({
                     <div className="mx-2">
                         <div className="text-base font-bold">{author}</div>
                         <div className="text-gray-700">
-                            {date} - {readingTime} min read
+                            {new Date(createdAt).toLocaleDateString()} -{' '}
+                            {readTime} min read
                         </div>
                     </div>
                 </div>

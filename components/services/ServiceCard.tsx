@@ -16,7 +16,7 @@ const ServiceCard = ({
         <div
             className={`items-center p-5 mx-2 md:mx-0 rounded-lg text-center shadow cursor-pointer transform transition hover:scale-105 duration-300 ${className}`}
         >
-            <div className="rounded-full p-3 bg-opacity-70 bg-lightblue-100 text-gray-800 inline-block sm:self-center">
+            <div className="rounded-full p-3 bg-opacity-70 bg-light text-gray-800 inline-block sm:self-center">
                 {image}
             </div>
             <div className="p-2">

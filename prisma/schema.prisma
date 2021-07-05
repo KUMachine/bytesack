@@ -1,0 +1,46 @@
+datasource db {
+  provider          = "postgres"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Post {
+  id          Int           @id @default(autoincrement())
+  slug        String        @unique
+  title       String
+  description String        @default("")
+  language    String        @default("en")
+  image       String
+  tags        String[]
+  author      String
+  authorImage String
+  readTime    Int?          @default(5)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
+  body        PostSection[]
+}
+
+model PostSection {
+  id       Int             @id @default(autoincrement())
+  seq      Int
+  type     PostSectionType
+  text     String?
+  language String?
+  src      String?
+  Post     Post?           @relation(fields: [postId], references: [id])
+  postId   Int?
+}
+
+enum PostSectionType {
+  heading
+  paragraph
+  code
+  image
+  note
+  warning
+  error
+}

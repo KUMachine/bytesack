@@ -36,7 +36,7 @@ const BlogPost = function ({ data }: BlogPostProps) {
                 {jsonData.title}
             </h1>
             <img
-                src="https://kentcdodds.com/static/5f9b92a74622943da79826df4a49636e/c6969/banner.webp"
+                src={jsonData.image}
                 alt="set your alt"
                 className="mx-auto w-full max-w-4xl"
             />
@@ -52,6 +52,7 @@ const BlogPost = function ({ data }: BlogPostProps) {
             <h2 className="text-xl mx-4 py-1">{jsonData.date}</h2>
             <h2 className="text-xl mx-4 py-1 capitalize">
                 by:&nbsp;{jsonData.author}
+                date: {jsonData.data}
             </h2>
         </div>
     )

@@ -5,7 +5,6 @@ module.exports = {
         './components/**/*.{js,ts,jsx,tsx}',
     ],
     darkMode: 'class', // or 'media' or 'class'
-    mode: 'jit',
     theme: {
         extend: {
             colors: {
@@ -20,6 +19,9 @@ module.exports = {
                 orange: colors.orange,
                 purple: colors.pueple,
                 rose: colors.rose,
+            },
+            boxShadow: {
+                inner: 'inset 0 4px 6px 0 rgba(0,0,0, 0.1)',
             },
         },
     },

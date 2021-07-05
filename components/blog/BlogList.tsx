@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next'
+import { Post } from '@prisma/client'
 import BlogCard from './BlogCard'
 
 interface BlogListProps {
     className?: string
+    posts: Post[]
 }
 
-const BlogList = ({ className }: BlogListProps) => {
+const BlogList = ({ className, posts }: BlogListProps) => {
     const { t } = useTranslation(['home'])
     return (
         <div className={`bg-light ${className}`}>
@@ -15,78 +17,41 @@ const BlogList = ({ className }: BlogListProps) => {
                 </h2>
                 <hr className="my-5 mx-auto" />
                 <div className="lg:px-3 md:px-5 grid gap-4 lg:gap-6 xl:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/29/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=48"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/22/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=28"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/23/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=38"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/24/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=58"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/25/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=45"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
-                    <BlogCard
-                        title="Web Design"
-                        description="Neque porro quisquam del toba lockin dati thok tormoi clotins thosca damori tomia est qui dolorem ratel bostai soliac mozate ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        image="https://picsum.photos/id/26/600/900.webp"
-                        className="bg-light"
-                        author="Areyan Naaman"
-                        authorImage="https://i.pravatar.cc/300?img=55"
-                        date="Mar 15, 2021"
-                        readingTime="6"
-                        tag="Technology - web"
-                        tagColor="red"
-                    />
+                    {posts.map(
+                        ({
+                            id,
+                            slug,
+                            title,
+                            description,
+                            language,
+                            image,
+                            author,
+                            authorImage,
+                            readTime,
+                            tags,
+                            createdAt,
+                            updatedAt,
+                        }) => {
+                            return (
+                                <BlogCard
+                                    key={id}
+                                    id={id}
+                                    slug={slug}
+                                    title={title}
+                                    description={description}
+                                    language={language}
+                                    image={image}
+                                    className="bg-light"
+                                    author={author}
+                                    authorImage={authorImage}
+                                    readTime={readTime}
+                                    tags={tags}
+                                    createdAt={createdAt}
+                                    updatedAt={updatedAt}
+                                />
+                            )
+                        }
+                    )}
                 </div>
             </div>
         </div>

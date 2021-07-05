@@ -5,14 +5,19 @@ import Header from '../components/header/Header'
 import Banner from '../components/banner/Banner'
 import Services from '../components/services/Services'
 import BlogList from '../components/blog/BlogList'
+import { Post, PrismaClient } from '@prisma/client'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    const prisma = await new PrismaClient()
+    const posts = await prisma.post.findMany()
+    await prisma.$disconnect()
     return {
         props: {
             ...(await serverSideTranslations(context.locale as string, [
                 'common',
                 'home',
             ])),
+            posts: JSON.stringify(posts),
         },
     }
 }
@@ -24,11 +29,11 @@ export default function Home(props: any) {
                 <title>Bytesack</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
+            <Header className="sticky top-0 z-30" />
             <main className="bg-light dark:bg-dark h-screen">
                 <Banner />
                 <Services />
-                <BlogList />
+                <BlogList posts={JSON.parse(props.posts)} />
             </main>
         </div>
     )

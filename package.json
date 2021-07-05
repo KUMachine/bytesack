@@ -6,7 +6,6 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "script": "ts-node ./run.ts",
         "migrate": "prisma migrate dev"
     },
     "dependencies": {
@@ -28,7 +27,7 @@
         "next-i18next": "^8.2.0",
         "popmotion": "^9.3.5",
         "postcss": "^8.2.10",
-        "prisma": "2.21.2",
+        "prisma": "^2.26.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-feather": "^2.0.9",
