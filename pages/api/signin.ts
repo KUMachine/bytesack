@@ -5,6 +5,7 @@ import { PrismaClient } from 'prisma/prisma-client'
 const Signin: NextApiHandler = async (req, res) => {
     const prisma = new PrismaClient()
     try {
+        //@ts-ignore
         const user = await prisma.user.findUnique({
             where: {
                 email: req.body.email,
