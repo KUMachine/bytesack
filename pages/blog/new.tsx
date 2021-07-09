@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
                 'common',
                 'blog',
             ])),
-            user,
+            // user,
         },
     }
 }
