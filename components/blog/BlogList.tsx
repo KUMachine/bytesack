@@ -36,6 +36,7 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                                 <BlogCard
                                     key={id}
                                     id={id}
+                                    userId={id}
                                     slug={slug}
                                     title={title}
                                     description={description}
