@@ -4,12 +4,16 @@ module.exports = {
         './pages/**/*.{js,jsx,ts,tsx}',
         './components/**/*.{js,ts,jsx,tsx}',
     ],
-    darkMode: 'class', // or 'media' or 'class'
+    darkMode: 'class', // or 'media' or 'class',
     theme: {
         extend: {
             colors: {
-                dark: colors.blueGray[800],
+                dark: colors.gray[800],
+                'dark-blue': colors.blueGray[800],
+                'dark-cool': colors.coolGray[800],
                 light: '#fafafa',
+                snow: '#f5fefd',
+                rice: '#faf5ef',
                 lime: colors.lime,
                 coolgray: colors.coolGray,
                 lightblue: colors.lightBlue,

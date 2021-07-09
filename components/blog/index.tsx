@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import Image from 'next/image'
-import CodeBlock from '../CodeBlock'
+import CodeBlock from './sections/CodeBlock'
 
 interface BlogPostProps {
     data: string

@@ -3,40 +3,58 @@ import DarkModeToggle from './DarkModeToggle'
 import Hamburger from './Hambuerger'
 import LangToggle from './LangToggle'
 import Link from 'next/link'
-import UserAvatar from './UserAvatar'
+import Image from 'next/image'
 
 interface HeaderProps {
     className?: string
-    user?: { email: string; role: string }
 }
 
-const Header = ({ className, user }: HeaderProps) => {
+const Header = ({ className }: HeaderProps) => {
     const { t } = useTranslation()
     return (
         <header className={className} dir={t('dir')}>
             <nav>
-                <div className="flex items-center justify-between border-gray-200 bg-lightblue-200 dark:bg-dark">
+                <div className="flex items-center justify-between backdrop-filter backdrop-blur-sm bg-opacity-70 dark:bg-opacity-90 bg-snow dark:bg-dark-blue">
                     <Hamburger className="md:hidden mx-2" />
                     <div className="flex items-center">
-                        <div className="px-5 pb-6 pt-5">
-                            <span className="text-2xl md:text-3xl font-pacifico font-semibold text-gray-700 dark:text-gray-300">
-                                Bytesack
-                            </span>
-                        </div>
-                        <ul className="hidden md:flex my-0 items-center text-2xl font-bold text-gray-600 dark:text-gray-300">
-                            <li className="px-2 py-6 hover:text-pink-500">
-                                <Link href="/">
-                                    <a>{t('Home')}</a>
-                                </Link>
-                            </li>
-                            <li className="px-2 py-6 hover:text-pink-500">
+                        <Link href="/">
+                            <a>
+                                <div className="px-5 pb-4 pt-3 flex items-center space-x-2">
+                                    <div>
+                                        <Image
+                                            className="filter dark:contrast-200"
+                                            src="/bytesack-logo-simple-cropped.svg"
+                                            alt="bytesack-logo"
+                                            height="40"
+                                            width="40"
+                                        />
+                                    </div>
+                                    <span className="text-2xl md:text-3xl font-pacifico font-semibold text-gray-700 dark:text-gray-300">
+                                        Bytesack
+                                    </span>
+                                </div>
+                            </a>
+                        </Link>
+                        <ul className="hidden md:flex my-0 items-center text-2xl font-bold">
+                            <li>
                                 <Link href="/blog">
-                                    <a>{t('Blog')}</a>
+                                    <a className="px-2 py-6 text-gray-700 dark:text-gray-300 hover:underline hover:text-lightblue-500">
+                                        {t('Blog')}
+                                    </a>
                                 </Link>
                             </li>
-                            <li className="px-2 py-6 hover:text-pink-500 ">
+                            <li>
                                 <Link href="/services">
-                                    <a>{t('Services')}</a>
+                                    <a className="px-2 py-6 text-gray-700 dark:text-gray-300 hover:underline hover:text-lightblue-500">
+                                        {t('Services')}
+                                    </a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/about">
+                                    <a className="px-2 py-6 text-gray-700 dark:text-gray-300 hover:underline hover:text-lightblue-500">
+                                        {t('About')}
+                                    </a>
                                 </Link>
                             </li>
                         </ul>

@@ -15,7 +15,7 @@ const BlogCard = ({
 }: BlogCardProps) => {
     return (
         <div
-            className={`flex flex-col overflow-hidden rounded-lg shadow-lg drop-shadow-xl ${className}`}
+            className={`flex flex-col bg-light overflow-hidden rounded-lg shadow-lg drop-shadow-xl ${className}`}
         >
             <div
                 className="w-full h-64 bg-coolgray-300"

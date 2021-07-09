@@ -6,6 +6,7 @@ import Banner from '../components/banner/Banner'
 import Services from '../components/services/Services'
 import BlogList from '../components/blog/BlogList'
 import { Post, PrismaClient } from '@prisma/client'
+import Footer from '../components/Footer'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const prisma = await new PrismaClient()
@@ -30,11 +31,12 @@ export default function Home(props: any) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header className="sticky top-0 z-30" />
-            <main className="bg-light dark:bg-dark h-screen">
+            <main className="bg-light dark:bg-dark">
                 <Banner />
                 <Services />
                 <BlogList posts={JSON.parse(props.posts)} />
             </main>
+            <Footer />
         </div>
     )
 }

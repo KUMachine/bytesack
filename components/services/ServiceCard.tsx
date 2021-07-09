@@ -14,12 +14,12 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
     return (
         <div
-            className={`items-center p-5 mx-2 md:mx-0 rounded-lg text-center shadow cursor-pointer transform transition hover:scale-105 duration-300 ${className}`}
+            className={`${className} items-center p-5 mx-2 md:mx-0 rounded-lg shadow cursor-pointer transform transition hover:scale-105 duration-300`}
         >
-            <div className="rounded-full p-3 bg-opacity-70 bg-light text-gray-800 inline-block sm:self-center">
+            <div className="rounded-2xl mx-2 p-3 bg-opacity-70 bg-light text-gray-800 inline-block sm:self-center">
                 {image}
             </div>
-            <div className="p-2">
+            <div className="p-2 text-gray-800">
                 <div className="my-2 text-2xl font-bold inline-block">
                     {title}
                 </div>

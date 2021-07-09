@@ -16,21 +16,23 @@ interface ServicesProps {}
 const Services = ({}: ServicesProps) => {
     const { t } = useTranslation(['home'])
     return (
-        <div className=" bg-gradient-to-r from-gray-100 to-gray-200">
+        <div className="bg-light dark:bg-dark-blue">
             <div className="w-full px-3 py-10 container mx-auto">
-                <h2 className="text-3xl font-bold text-center text-coolgray-700">
-                    What we do?
-                </h2>
-                <h3 className="pb-4 text-lg font-semibold text-center text-coolgray-500">
-                    Bytesack provides all kinds of software and technology
-                    services including:
-                </h3>
+                <div className="mx-5">
+                    <h2 className="text-3xl font-bold text-coolgray-600 dark:text-coolgray-200">
+                        What we do?
+                    </h2>
+                    <h3 className="pb-4 text-lg text-coolgray-500 dark:text-coolgray-300">
+                        Bytesack provides all kinds of software and technology
+                        services including:
+                    </h3>
+                </div>
                 <div className="lg:px-3 md:px-5 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     <ServiceCard
                         title="Web Design"
                         description="Modern web layout and components design that make your website look great."
                         image={<Monitor size={32} />}
-                        className="bg-gradient-to-br from-pink-300 to-pink-600"
+                        className="bg-gradient-to-br from-pink-300 to-pink-500"
                     />
                     <ServiceCard
                         title="Web Development"
