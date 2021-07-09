@@ -6,7 +6,7 @@ import Link from 'next/link'
 import useAuth from '../../utils/useAuth'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const user = useAuth(context.req.cookies['bytesack-auth-token'])
+    // const user = useAuth(context.req.cookies['bytesack-auth-token'])
     return {
         props: {
             ...(await serverSideTranslations(context.locale as string, [
