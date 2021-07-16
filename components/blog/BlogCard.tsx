@@ -7,7 +7,7 @@ const BlogCard = ({
     description,
     image,
     className = '',
-    tags = ['blog'],
+    tags = 'blog',
     author,
     authorImage,
     readTime,
@@ -29,16 +29,7 @@ const BlogCard = ({
             />
             <div className="px-8 pt-8 pb-2 flex flex-col justify-between flex-auto">
                 <div>
-                    <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                            <div
-                                key={tag}
-                                className="hover:underline cursor-pointer text-base shadow-inner py-1 px-2 rounded-lg mx-1 bg-cyan-300 text-gray-600 font-bold"
-                            >
-                                #{tag}
-                            </div>
-                        ))}
-                    </div>
+                    <div className="flex flex-wrap">{tags}</div>
                     <hr className="my-2" />
                     <div className="text-2xl font-bold py-1">{title}</div>
                     <div className="text-base">{description}</div>

@@ -10,6 +10,12 @@ import Footer from '../components/Footer'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const prisma = await new PrismaClient()
+    await prisma.user.create({
+        data: {
+            name: 'are',
+            email: 'areyan@email.com',
+        },
+    })
     const posts = await prisma.post.findMany()
     await prisma.$disconnect()
     return {
