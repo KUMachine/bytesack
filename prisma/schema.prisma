@@ -12,7 +12,8 @@ model User {
   id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
   name      String
   email     String   @unique
-  image     String   @default("default-image.svg")
+  avatar    String   @default("default-avatar.svg")
+  cover     String   @default("default-cover.svg")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -24,7 +25,7 @@ model Post {
   description String        @default("")
   language    String        @default("en")
   image       String
-  tags        String
+  tag         String
   author      String
   authorImage String
   readTime    Int?          @default(5)

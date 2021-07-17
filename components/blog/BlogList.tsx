@@ -28,7 +28,7 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                             author,
                             authorImage,
                             readTime,
-                            tags,
+                            tag,
                             createdAt,
                             updatedAt,
                         }) => {
@@ -36,7 +36,6 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                                 <BlogCard
                                     key={id}
                                     id={id}
-                                    userId={id}
                                     slug={slug}
                                     title={title}
                                     description={description}
@@ -46,7 +45,7 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                                     author={author}
                                     authorImage={authorImage}
                                     readTime={readTime}
-                                    tags={tags}
+                                    tag={tag}
                                     createdAt={createdAt}
                                     updatedAt={updatedAt}
                                 />

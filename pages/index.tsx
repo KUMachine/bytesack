@@ -5,18 +5,13 @@ import Header from '../components/header/Header'
 import Banner from '../components/banner/Banner'
 import Services from '../components/services/Services'
 import BlogList from '../components/blog/BlogList'
-import { Post, PrismaClient } from '@prisma/client'
 import Footer from '../components/Footer'
+import prisma from 'lib/prisma'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const prisma = await new PrismaClient()
-    await prisma.user.create({
-        data: {
-            name: 'are',
-            email: 'areyan@email.com',
-        },
-    })
     const posts = await prisma.post.findMany()
+    console.log({ posts })
+
     await prisma.$disconnect()
     return {
         props: {
