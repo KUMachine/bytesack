@@ -59,7 +59,7 @@
         "skipLibCheck": true /* Skip type checking of declaration files. */,
         "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
         "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
+        // "allowJs": true,
         "noEmit": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,

@@ -1,6 +1,4 @@
-import jwt from 'jsonwebtoken'
 import { NextApiHandler } from 'next'
-import { PrismaClient } from 'prisma/prisma-client'
 
 const Signin: NextApiHandler = async (req, res) => {
     // const prisma = new PrismaClient()
