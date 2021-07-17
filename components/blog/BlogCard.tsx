@@ -7,7 +7,7 @@ const BlogCard = ({
     description,
     image,
     className = '',
-    tags = 'blog',
+    tag = 'blog',
     author,
     authorImage,
     readTime,
@@ -29,7 +29,7 @@ const BlogCard = ({
             />
             <div className="px-8 pt-8 pb-2 flex flex-col justify-between flex-auto">
                 <div>
-                    <div className="flex flex-wrap">{tags}</div>
+                    <div className="flex flex-wrap">{tag}</div>
                     <hr className="my-2" />
                     <div className="text-2xl font-bold py-1">{title}</div>
                     <div className="text-base">{description}</div>
