@@ -9,14 +9,13 @@ export default function _404() {
             <Header className="sticky top-0 z-30" />
             <div className="py-24 md:py-44 px-5 md:px-16 space-y-5 dark:bg-dark-blue dark:text-gray-400">
                 <div className="text-lg md:text-xl font-bold text-pink-600 dark:text-pink-400">
-                    404 ERROR
+                    500 ERROR
                 </div>
                 <div className="text-4xl md:text-6xl font-black">
-                    Page not found
+                    Internal server error
                 </div>
                 <div className="text-lg md:text-xl">
-                    Sorry, we couldn&apos;t find the page you&apos;re looking
-                    for.
+                    Sorry, we failed to process you request.
                 </div>
                 <Link href="/">
                     <a>

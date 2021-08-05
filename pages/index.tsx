@@ -10,8 +10,6 @@ import prisma from 'lib/prisma'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const posts = await prisma.post.findMany()
-    console.log({ posts })
-
     await prisma.$disconnect()
     return {
         props: {

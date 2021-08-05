@@ -5,7 +5,7 @@ const SplashLoading = () => {
             <span className="m-auto text-center text-white">
                 <div>
                     <Image
-                        className="filter dark:contrast-200 animate-pulse"
+                        className="filter dark:contrast-200 animate-pulse -mt-40"
                         src="/bytesack-logo-simple.svg"
                         alt="bytesack-logo"
                         height="100"
