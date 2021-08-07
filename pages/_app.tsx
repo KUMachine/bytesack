@@ -6,12 +6,6 @@ import router from 'next/router'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import SplashLoading from '../components/SplashLoading'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
-
-const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
-    cache: new InMemoryCache(),
-})
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [loading, setLoading] = useState<boolean>(false)
@@ -27,9 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {loading && <SplashLoading />}
-            <ApolloProvider client={client}>
-                <Component {...pageProps} />
-            </ApolloProvider>
+            <Component {...pageProps} />
         </>
     )
 }

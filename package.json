@@ -11,17 +11,10 @@
         "migrate": "prisma migrate dev"
     },
     "dependencies": {
-        "@apollo/client": "^3.3.21",
         "@headlessui/react": "^1.0.0",
         "@prisma/client": "^2.21.2",
         "@tailwindcss/jit": "^0.1.18",
-        "@types/js-cookie": "^2.2.6",
-        "@types/jsonwebtoken": "^8.5.1",
-        "@types/next": "^9.0.0",
-        "@types/node": "^14.14.40",
-        "@types/react-syntax-highlighter": "^13.5.0",
         "animate.css": "^4.1.1",
-        "antd": "^4.15.1",
         "autoprefixer": "^10.2.5",
         "axios": "^0.21.1",
         "graphql": "^15.5.1",
@@ -44,6 +37,10 @@
         "validator": "^13.6.0"
     },
     "devDependencies": {
+        "@types/js-cookie": "^2.2.6",
+        "@types/jsonwebtoken": "^8.5.1",
+        "@types/node": "^14.14.40",
+        "@types/react-syntax-highlighter": "^13.5.0",
         "@types/validator": "^13.6.3",
         "eslint": "^7.30.0",
         "eslint-config-next": "^11.0.1",

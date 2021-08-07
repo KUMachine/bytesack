@@ -1,45 +1,59 @@
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  provider = "prisma-client-js"
 }
 
 model User {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id        Int      @id @default(autoincrement())
   name      String
   email     String   @unique
   avatar    String   @default("default-avatar.svg")
   cover     String   @default("default-cover.svg")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  posts     Post[]
 }
 
 model Post {
-  id          String        @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id          Int           @id @default(autoincrement())
   slug        String        @unique
   title       String
   description String        @default("")
-  language    String        @default("en")
+  language    PostLanguage  @default(EN)
   image       String
-  tag         String
-  author      String
+  tags        String[]
+  author      User          @relation(fields: [userId], references: [id])
   authorImage String
   readTime    Int?          @default(5)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @default(now()) @updatedAt
+  published   Boolean       @default(false)
   body        PostSection[]
+  userId      Int
 }
 
 model PostSection {
-  id       String  @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id       Int             @id @default(autoincrement())
   seq      Int
-  type     String
+  type     PostSectionType
   text     String?
   language String?
   src      String?
-  post     Post[]
+  post     Post            @relation(fields: [postId], references: [id])
+  postId   Int
+}
+
+enum PostSectionType {
+  PARAGRAPH
+  CODE
+  IMAGE
+}
+
+enum PostLanguage {
+  EN
+  KU
 }

@@ -20,34 +20,29 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                     {posts.map(
                         ({
                             id,
+                            userId,
                             slug,
                             title,
                             description,
                             language,
                             image,
-                            author,
                             authorImage,
                             readTime,
-                            tag,
+                            tags,
                             createdAt,
                             updatedAt,
                         }) => {
                             return (
                                 <BlogCard
                                     key={id}
-                                    id={id}
-                                    slug={slug}
                                     title={title}
                                     description={description}
-                                    language={language}
                                     image={image}
                                     className="bg-light"
-                                    author={author}
                                     authorImage={authorImage}
                                     readTime={readTime}
-                                    tag={tag}
+                                    tags={tags}
                                     createdAt={createdAt}
-                                    updatedAt={updatedAt}
                                 />
                             )
                         }
