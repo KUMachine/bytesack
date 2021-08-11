@@ -9,13 +9,32 @@ generator client {
 
 model User {
   id        Int      @id @default(autoincrement())
-  name      String
+  firstname String
+  lastname  String
+  username  String
   email     String   @unique
   avatar    String   @default("default-avatar.svg")
   cover     String   @default("default-cover.svg")
+  role      UserRole @default(MEMBER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   posts     Post[]
+  account   Account  @relation(fields: [accountId], references: [id])
+  accountId Int
+}
+
+model Account {
+  id        Int      @id @default(autoincrement())
+  User      User?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum UserRole {
+  SUPERUSER
+  ADMIN
+  MEMBER
 }
 
 model Post {

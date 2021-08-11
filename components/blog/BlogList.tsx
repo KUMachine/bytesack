@@ -20,17 +20,13 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                     {posts.map(
                         ({
                             id,
-                            userId,
-                            slug,
                             title,
                             description,
-                            language,
                             image,
                             authorImage,
                             readTime,
                             tags,
                             createdAt,
-                            updatedAt,
                         }) => {
                             return (
                                 <BlogCard

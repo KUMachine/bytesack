@@ -61,7 +61,7 @@ const Header = ({ className }: HeaderProps) => {
                             </ul>
                         </div>
                         <div className="flex items-center font-bold md:mx-2">
-                            <LangToggle className="mx-1 md:mx-2" />
+                            <LangToggle />
                             <DarkModeToggle className="mx-1 md:mx-2" />
                         </div>
                     </div>

@@ -39,7 +39,10 @@ const BlogCard = ({
                 <div>
                     <div className="flex flex-wrap">
                         {tags.map((tag) => (
-                            <span className="text-purple-400 font-bold mx-0.5 hover:underline cursor-pointer">
+                            <span
+                                key={tag}
+                                className="text-purple-400 font-bold mx-0.5 hover:underline cursor-pointer"
+                            >
                                 #{tag}
                             </span>
                         ))}
