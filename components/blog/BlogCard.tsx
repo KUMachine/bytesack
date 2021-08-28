@@ -2,14 +2,8 @@ import Image from 'next/image'
 import { Post } from 'prisma/prisma-client'
 type BlogCardProps = Pick<
     Post,
-    | 'title'
-    | 'description'
-    | 'image'
-    | 'tags'
-    | 'authorImage'
-    | 'readTime'
-    | 'createdAt'
-> & { className: string }
+    'title' | 'description' | 'image' | 'tags' | 'readTime' | 'createdAt'
+> & { className: string; authorImage: string }
 
 const BlogCard = ({
     title,
@@ -17,9 +11,9 @@ const BlogCard = ({
     image,
     className = '',
     tags,
-    authorImage,
     readTime,
     createdAt,
+    authorImage,
 }: BlogCardProps) => {
     return (
         <div

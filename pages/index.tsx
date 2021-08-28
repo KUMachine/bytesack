@@ -9,7 +9,9 @@ import Footer from '../components/Footer'
 import prisma from 'lib/prisma'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const posts = await prisma.post.findMany()
+    const posts = await prisma.post.findMany({
+        include: { author: { select: { avatar: true } } },
+    })
     await prisma.$disconnect()
     return {
         props: {

@@ -2,9 +2,10 @@ import { useTranslation } from 'react-i18next'
 import { Post } from '@prisma/client'
 import BlogCard from './BlogCard'
 
+type BlogPost = Post & { author: { avatar: string } }
 interface BlogListProps {
     className?: string
-    posts: Post[]
+    posts: BlogPost[]
 }
 
 const BlogList = ({ className, posts }: BlogListProps) => {
@@ -23,10 +24,10 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                             title,
                             description,
                             image,
-                            authorImage,
                             readTime,
                             tags,
                             createdAt,
+                            author,
                         }) => {
                             return (
                                 <BlogCard
@@ -35,10 +36,10 @@ const BlogList = ({ className, posts }: BlogListProps) => {
                                     description={description}
                                     image={image}
                                     className="bg-light"
-                                    authorImage={authorImage}
                                     readTime={readTime}
                                     tags={tags}
                                     createdAt={createdAt}
+                                    authorImage={author.avatar}
                                 />
                             )
                         }

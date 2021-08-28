@@ -3,7 +3,6 @@ import prisma from 'lib/prisma'
 import { sign } from 'jsonwebtoken'
 
 const Signin: NextApiHandler = async (req, res) => {
-    await prisma.$connect()
     try {
         const user = await prisma.user.findFirst({
             where: {
@@ -42,7 +41,6 @@ const Signin: NextApiHandler = async (req, res) => {
             message: 'Unknown error occured.',
         })
     }
-    await prisma.$disconnect()
 }
 
 export default Signin

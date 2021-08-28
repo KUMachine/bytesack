@@ -27,7 +27,6 @@ export async function seed() {
                         description: faker.random.words(),
                         image: faker.random.image(),
                         tags: ['javascript', 'typescript', 'graphql'],
-                        authorImage: faker.image.avatar(),
                     },
                 },
             },

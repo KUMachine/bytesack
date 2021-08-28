@@ -13,8 +13,7 @@ model User {
   lastname  String
   username  String
   email     String   @unique
-  avatar    String   @default("default-avatar.svg")
-  cover     String   @default("default-cover.svg")
+  avatar    String   @default("/default-avatar.jpg")
   role      UserRole @default(MEMBER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -38,38 +37,19 @@ enum UserRole {
 }
 
 model Post {
-  id          Int           @id @default(autoincrement())
-  slug        String        @unique
+  id          Int          @id @default(autoincrement())
+  slug        String       @unique
   title       String
-  description String        @default("")
-  language    PostLanguage  @default(EN)
+  description String       @default("")
+  language    PostLanguage @default(EN)
   image       String
   tags        String[]
-  author      User          @relation(fields: [userId], references: [id])
-  authorImage String
-  readTime    Int?          @default(5)
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @default(now()) @updatedAt
-  published   Boolean       @default(false)
-  body        PostSection[]
+  author      User         @relation(fields: [userId], references: [id])
+  readTime    Int?         @default(5)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now()) @updatedAt
+  published   Boolean      @default(false)
   userId      Int
-}
-
-model PostSection {
-  id       Int             @id @default(autoincrement())
-  seq      Int
-  type     PostSectionType
-  text     String?
-  language String?
-  src      String?
-  post     Post            @relation(fields: [postId], references: [id])
-  postId   Int
-}
-
-enum PostSectionType {
-  PARAGRAPH
-  CODE
-  IMAGE
 }
 
 enum PostLanguage {

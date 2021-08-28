@@ -33,9 +33,9 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
                                         <img
-                                            className="h-8 w-8"
-                                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                            alt="Workflow"
+                                            className="h-12 w-12 contrast-200"
+                                            src="/bytesack-logo-simple.svg"
+                                            alt="bytesack"
                                         />
                                     </div>
                                     <div className="hidden md:block">
@@ -207,8 +207,8 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                     <div className="flex-shrink-0">
                                         <img
                                             className="h-10 w-10 rounded-full"
-                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                            alt=""
+                                            src={user.avatar}
+                                            alt="avatar"
                                         />
                                     </div>
                                     <div className="ml-3">
@@ -257,9 +257,9 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                     </>
                 )}
             </Disclosure>
-            <header className="bg-yellow-100 shadow">
+            <header className="bg-purple-200 shadow">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold text-yellow-900 capitalize">
+                    <h1 className="text-3xl font-bold text-purple-900 capitalize">
                         {active}
                     </h1>
                 </div>
