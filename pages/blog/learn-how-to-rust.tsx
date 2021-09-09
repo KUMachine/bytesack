@@ -47,6 +47,7 @@ const About = () => {
                     cupiditate.
                 </Note>
                 <Heading>The list of the items in the blog</Heading>
+                <p>Watch out for this list this might be updated soon</p>
                 <List>
                     <p>Hello list items in the blog</p>
                     <p>

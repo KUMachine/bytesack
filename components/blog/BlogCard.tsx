@@ -1,11 +1,18 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import { Post } from 'prisma/prisma-client'
 type BlogCardProps = Pick<
     Post,
-    'title' | 'description' | 'image' | 'tags' | 'readTime' | 'createdAt'
+    | 'slug'
+    | 'title'
+    | 'description'
+    | 'image'
+    | 'tags'
+    | 'readTime'
+    | 'createdAt'
 > & { className: string; authorImage: string }
 
 const BlogCard = ({
+    slug,
     title,
     description,
     image,
@@ -41,9 +48,14 @@ const BlogCard = ({
                             </span>
                         ))}
                     </div>
-                    <div className="text-2xl font-bold py-1 text-dark dark:text-snow">
-                        {title}
-                    </div>
+                    <Link href={`/blog/${slug}`}>
+                        <a>
+                            <div className="text-2xl font-bold py-1 text-dark dark:text-snow">
+                                {title}
+                            </div>
+                        </a>
+                    </Link>
+
                     <div className="text-dark dark:text-gray-300 text-lg">
                         {description}
                     </div>

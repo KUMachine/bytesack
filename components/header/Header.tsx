@@ -13,7 +13,7 @@ const Header = ({ className }: HeaderProps) => {
     const { t } = useTranslation()
     return (
         <header className={className} dir={t('dir')}>
-            <nav>
+            <nav className={t('font')}>
                 <div className="backdrop-filter backdrop-blur-sm bg-opacity-70 dark:bg-opacity-90 bg-snow dark:bg-dark-blue">
                     <div className="container mx-auto flex items-center justify-between">
                         <Hamburger className="md:hidden mx-2" />
@@ -31,12 +31,12 @@ const Header = ({ className }: HeaderProps) => {
                                             />
                                         </div>
                                         <span className="text-2xl md:text-3xl font-pacifico font-semibold text-gray-700 dark:text-gray-300">
-                                            Bytesack
+                                            {t('Bytesack')}
                                         </span>
                                     </div>
                                 </a>
                             </Link>
-                            <ul className="hidden md:flex my-0 items-center text-2xl font-bold">
+                            <ul className="hidden md:flex my-0 items-center text-2xl">
                                 <li>
                                     <Link href="/blog">
                                         <a className="px-2 py-6 text-gray-700 dark:text-gray-300 hover:underline hover:text-lightblue-500">

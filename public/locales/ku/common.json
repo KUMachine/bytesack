@@ -1,8 +1,9 @@
 {
     "dir": "rtl",
-    "font": "font-amiri",
+    "font": "font-ku",
     "Lang": "ku",
     "Home": "سەرەکی",
     "Blog": "بلۆگ",
-    "Services": "خزمه‌تگوزاریه‌کان"
+    "Services": "خزمه‌تگوزاریه‌کان",
+    "Bytesack": "بایتساک"
 }

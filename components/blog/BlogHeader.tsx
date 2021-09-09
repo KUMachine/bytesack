@@ -40,10 +40,12 @@ export default function BlogHeader({
                 ))}
             </div>
             <div className="flex py-5 justify-center">
-                <img
+                <Image
                     src={author.image}
                     alt="areyan naaman"
-                    className="w-12 h-12 rounded-full shadow-sm"
+                    height="50"
+                    width="50"
+                    className="rounded-full shadow-sm"
                 />
                 <div className="mx-2 text-dark dark:text-snow text-justify">
                     <div className="text-base font-bold">{author.name}</div>
