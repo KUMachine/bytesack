@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -14,7 +14,7 @@ model User {
   username  String
   email     String   @unique
   avatar    String   @default("/default-avatar.jpg")
-  role      UserRole @default(MEMBER)
+  role      String @default("user")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   posts     Post[]
@@ -30,29 +30,19 @@ model Account {
   updatedAt DateTime @updatedAt
 }
 
-enum UserRole {
-  SUPERUSER
-  ADMIN
-  MEMBER
-}
 
 model Post {
   id          Int          @id @default(autoincrement())
   slug        String       @unique
   title       String
   description String       @default("")
-  language    PostLanguage @default(EN)
+  language    String @default("en")
   image       String
-  tags        String[]
+  tags        String
   author      User         @relation(fields: [userId], references: [id])
   readTime    Int?         @default(5)
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @default(now()) @updatedAt
   published   Boolean      @default(false)
   userId      Int
-}
-
-enum PostLanguage {
-  EN
-  KU
 }

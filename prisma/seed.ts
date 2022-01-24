@@ -26,7 +26,7 @@ export async function seed() {
                         title: faker.random.words(),
                         description: faker.random.words(),
                         image: faker.random.image(),
-                        tags: ['javascript', 'typescript', 'graphql'],
+                        tags: "javascript",
                     },
                 },
             },

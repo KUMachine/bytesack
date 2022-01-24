@@ -39,14 +39,12 @@ const BlogCard = ({
             <div className="px-8 pt-8 pb-2 flex flex-col justify-between flex-auto">
                 <div>
                     <div className="flex flex-wrap">
-                        {tags.map((tag) => (
                             <span
-                                key={tag}
+                                key={tags}
                                 className="text-purple-400 font-bold mx-0.5 hover:underline cursor-pointer"
                             >
-                                #{tag}
+                                #{tags}
                             </span>
-                        ))}
                     </div>
                     <Link href={`/blog/${slug}`}>
                         <a>
