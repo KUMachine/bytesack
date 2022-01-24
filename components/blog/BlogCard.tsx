@@ -24,10 +24,10 @@ const BlogCard = ({
 }: BlogCardProps) => {
     return (
         <div
-            className={`flex flex-col bg-light dark:bg-gray-700 overflow-hidden rounded-lg shadow-lg drop-shadow-xl ${className}`}
+            className={`flex flex-col  overflow-hidden rounded-lg bg-light shadow-lg drop-shadow-xl dark:bg-gray-700 ${className}`}
         >
             <div
-                className="w-full h-64 bg-coolgray-500"
+                className="h-64 w-full  bg-coolgray-500"
                 style={{
                     backgroundImage: `url(${image})`,
                     backgroundPosition: 'center',
@@ -36,25 +36,25 @@ const BlogCard = ({
                     backgroundClip: 'content-box',
                 }}
             />
-            <div className="px-8 pt-8 pb-2 flex flex-col justify-between flex-auto">
+            <div className="flex flex-auto flex-col justify-between px-8 pt-8 pb-2">
                 <div>
                     <div className="flex flex-wrap">
-                            <span
-                                key={tags}
-                                className="text-purple-400 font-bold mx-0.5 hover:underline cursor-pointer"
-                            >
-                                #{tags}
-                            </span>
+                        <span
+                            key={tags}
+                            className="mx-0.5 cursor-pointer font-bold text-purple-400 hover:underline"
+                        >
+                            #{tags}
+                        </span>
                     </div>
                     <Link href={`/blog/${slug}`}>
                         <a>
-                            <div className="text-2xl font-bold py-1 text-dark dark:text-snow">
+                            <div className="py-1 text-2xl font-bold text-dark dark:text-snow">
                                 {title}
                             </div>
                         </a>
                     </Link>
 
-                    <div className="text-dark dark:text-gray-300 text-lg">
+                    <div className="text-lg text-dark dark:text-gray-300">
                         {description}
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const BlogCard = ({
                     <img
                         src={authorImage}
                         alt="areyan naaman"
-                        className="w-12 h-12 rounded-full shadow-sm"
+                        className="h-12 w-12 rounded-full shadow-sm"
                     />
                     <div className="mx-2 text-dark dark:text-snow">
                         <div className="text-base font-bold">{'areyan'}</div>

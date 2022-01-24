@@ -18,7 +18,7 @@ const Services = ({}: ServicesProps) => {
     const { t } = useTranslation(['home'])
     return (
         <div className="bg-light dark:bg-dark-blue">
-            <div className="w-full px-3 py-10 container mx-auto">
+            <div className="container mx-auto w-full px-3 py-10">
                 <div className="mx-5">
                     <h2 className="text-3xl font-bold text-coolgray-600 dark:text-coolgray-200">
                         What we do?
@@ -28,7 +28,7 @@ const Services = ({}: ServicesProps) => {
                         services including:
                     </h3>
                 </div>
-                <div className="lg:px-3 md:px-5 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:px-5 lg:grid-cols-4 lg:px-3">
                     {serviceDataList.map(
                         ({ title, description, icon, className }) => (
                             <ServiceCard

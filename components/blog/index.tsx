@@ -24,7 +24,7 @@ const Section = function ({ sectionData }: any) {
                 />
             )
         default:
-            return <div className="mx-8 text-lg py-2">{sectionData.text}</div>
+            return <div className="mx-8 py-2 text-lg">{sectionData.text}</div>
     }
 }
 
@@ -32,7 +32,7 @@ const BlogPost = function ({ data }: BlogPostProps) {
     const jsonData = JSON.parse(data)
     return (
         <div className="px-3">
-            <h1 className="text-4xl font-bold text-center pt-6 pb-2">
+            <h1 className="pt-6 pb-2 text-center text-4xl font-bold">
                 {jsonData.title}
             </h1>
             <img
@@ -49,8 +49,8 @@ const BlogPost = function ({ data }: BlogPostProps) {
                     )
                 })}
             </ul>
-            <h2 className="text-xl mx-4 py-1">{jsonData.date}</h2>
-            <h2 className="text-xl mx-4 py-1 capitalize">
+            <h2 className="mx-4 py-1 text-xl">{jsonData.date}</h2>
+            <h2 className="mx-4 py-1 text-xl capitalize">
                 by:&nbsp;{jsonData.author}
                 date: {jsonData.data}
             </h2>

@@ -20,10 +20,10 @@ const ServiceSection = ({
             >
                 {icon}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold dark:text-gray-300">
+            <h2 className="text-3xl font-bold dark:text-gray-300 md:text-4xl">
                 {title}
             </h2>
-            <p className="text-lg m-0">{description}</p>
+            <p className="m-0 text-lg">{description}</p>
         </section>
     )
 }

@@ -13,10 +13,10 @@ export default function BlogContainer({ children }: BlogContainerProps) {
         <>
             <Header className="sticky top-0 z-30" />
             <div
-                className="bg-gray-50 dark:bg-coolgray-800 text-dark-blue dark:text-rice"
+                className="bg-gray-50 text-dark-blue dark:bg-coolgray-800 dark:text-rice"
                 dir={dir}
             >
-                <div className="container lg:max-w-5xl mx-auto min-h-screen px-2 space-y-8 text-lg pb-5">
+                <div className="container mx-auto min-h-screen space-y-8 px-2 pb-5 text-lg lg:max-w-5xl">
                     {children}
                 </div>
             </div>

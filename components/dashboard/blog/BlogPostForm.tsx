@@ -68,8 +68,8 @@ export default function BlogPostForm() {
                 setLoading(false)
             }}
         >
-            <div className="font-bold mx-1">New Post:</div>
-            <div className="bg-white shadow rounded-lg">
+            <div className="mx-1 font-bold">New Post:</div>
+            <div className="rounded-lg bg-white shadow">
                 <div className="px-4 py-5 sm:p-6">
                     <div className="grid grid-cols-9 gap-6">
                         <div className="col-span-6 sm:col-span-3">
@@ -87,7 +87,7 @@ export default function BlogPostForm() {
                                 id="slug"
                                 autoComplete="slug"
                                 placeholder="this-is-slug"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
 
@@ -106,7 +106,7 @@ export default function BlogPostForm() {
                                 id="title"
                                 autoComplete="title"
                                 placeholder="post title"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-3">
@@ -121,7 +121,7 @@ export default function BlogPostForm() {
                                 onChange={(e) => setLanguage(e.target.value)}
                                 name="language"
                                 id="language"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             >
                                 <option value="EN">English</option>
                                 <option value="KU">Kurdish</option>
@@ -140,7 +140,7 @@ export default function BlogPostForm() {
                                 type="number"
                                 name="readtime"
                                 id="readtime"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                         <div className="col-span-6">
@@ -156,7 +156,7 @@ export default function BlogPostForm() {
                                 type="text"
                                 name="description"
                                 id="description"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                         <div className="col-span-9">
@@ -171,11 +171,11 @@ export default function BlogPostForm() {
                             {tags.map((tag) => (
                                 <li
                                     key={tag}
-                                    className="flex items-center space-x-1 bg-lightblue-600 text-light py-1 px-2 rounded-md"
+                                    className="flex items-center space-x-1 rounded-md bg-lightblue-600 py-1 px-2 text-light"
                                 >
                                     <span>{tag}</span>
                                     <XIcon
-                                        className="hover:text-gray-300 cursor-pointer"
+                                        className="cursor-pointer hover:text-gray-300"
                                         size="20"
                                         onClick={() => {
                                             const newTags = tags.filter(
@@ -200,11 +200,11 @@ export default function BlogPostForm() {
                                     type="text"
                                     name="tags"
                                     id="tags"
-                                    className="mt-1 focus:ring-indigo-500 w-full max-w-sm focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    className="mt-1 block w-full max-w-sm rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                     onChange={(e) => setTag(e.target.value)}
                                 />
                                 <button
-                                    className="inline-flex justify-center mt-1 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    className="focus:outline-none mt-1 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     onClick={(e) => {
                                         e.preventDefault()
                                         if (tag !== '' && !tags.includes(tag)) {
@@ -219,18 +219,18 @@ export default function BlogPostForm() {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-between items-center space-x-2 px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div className="flex items-center justify-between space-x-2 bg-gray-50 px-4 py-3 text-right sm:px-6">
                     <div className="text-red-400">
                         {error}
                         {loading && 'loading...'}
                     </div>
                     <div className="flex justify-end space-x-2">
-                        <Disclosure.Button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <Disclosure.Button className="focus:outline-none inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                             Close
                         </Disclosure.Button>
                         <button
                             type="submit"
-                            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="focus:outline-none inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             Save
                         </button>

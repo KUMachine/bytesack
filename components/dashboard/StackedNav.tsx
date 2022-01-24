@@ -28,8 +28,8 @@ export default function StackedNav({ active, user }: StackedNavProps) {
             <Disclosure as="nav" className="bg-dark-blue">
                 {({ open }) => (
                     <>
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="flex items-center justify-between h-16">
+                        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                            <div className="flex h-16 items-center justify-between">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
                                         <img
@@ -39,14 +39,14 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                         />
                                     </div>
                                     <div className="hidden md:block">
-                                        <div className="ml-10 flex items-baseline space-x-4 capitalize font-bold text-base">
+                                        <div className="ml-10 flex items-baseline space-x-4 text-base font-bold capitalize">
                                             {navigation.map((item) =>
                                                 item === active ? (
                                                     <Fragment key={item}>
                                                         {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                                                         <a
                                                             href="#"
-                                                            className="bg-gray-900 text-white px-3 py-2 rounded-md"
+                                                            className="rounded-md bg-gray-900 px-3 py-2 text-white"
                                                         >
                                                             {item}
                                                         </a>
@@ -59,7 +59,7 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                                                 ? ''
                                                                 : item
                                                         }`}
-                                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md"
+                                                        className="rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
                                                     >
                                                         {item}
                                                     </a>
@@ -70,7 +70,7 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                 </div>
                                 <div className="hidden md:block">
                                     <div className="ml-4 flex items-center md:ml-6">
-                                        <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <button className="focus:outline-none rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                             <span className="sr-only">
                                                 View notifications
                                             </span>
@@ -83,12 +83,12 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                         {/* Profile dropdown */}
                                         <Menu
                                             as="div"
-                                            className="ml-3 relative"
+                                            className="relative ml-3"
                                         >
                                             {({ open }) => (
                                                 <>
                                                     <div>
-                                                        <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                        <Menu.Button className="focus:outline-none flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                                             <span className="sr-only">
                                                                 Open user menu
                                                             </span>
@@ -113,12 +113,12 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                                     >
                                                         <Menu.Items
                                                             static
-                                                            className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                                            className="focus:outline-none absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5"
                                                         >
                                                             <Menu.Item>
                                                                 <a
                                                                     href="/dashboard/profile"
-                                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                                                    className="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                                                 >
                                                                     Your Profile
                                                                 </a>
@@ -126,14 +126,14 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                                             <Menu.Item>
                                                                 <a
                                                                     href="/dashboard/settings"
-                                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                                                    className="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                                                 >
                                                                     Settings
                                                                 </a>
                                                             </Menu.Item>
                                                             <Menu.Item>
                                                                 <a
-                                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                                                    className="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                                                     onClick={(
                                                                         e
                                                                     ) => {
@@ -156,7 +156,7 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                 </div>
                                 <div className="-mr-2 flex md:hidden">
                                     {/* Mobile menu button */}
-                                    <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                    <Disclosure.Button className="focus:outline-none inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <span className="sr-only">
                                             Open main menu
                                         </span>
@@ -177,14 +177,14 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                         </div>
 
                         <Disclosure.Panel className="md:hidden">
-                            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 capitalize font-medium text-base">
+                            <div className="space-y-1 px-2 pt-2 pb-3 text-base font-medium capitalize sm:px-3">
                                 {navigation.map((item) =>
                                     item === active ? (
                                         <Fragment key={item}>
                                             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                                             <a
                                                 href="#"
-                                                className="bg-gray-900 text-white block px-3 py-2 rounded-md"
+                                                className="block rounded-md bg-gray-900 px-3 py-2 text-white"
                                             >
                                                 {item}
                                             </a>
@@ -195,14 +195,14 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                             href={`/dashboard/${
                                                 item === 'dashboard' ? '' : item
                                             }`}
-                                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md"
+                                            className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
                                         >
                                             {item}
                                         </a>
                                     )
                                 )}
                             </div>
-                            <div className="pt-4 pb-3 border-t border-gray-700">
+                            <div className="border-t border-gray-700 pt-4 pb-3">
                                 <div className="flex items-center px-5">
                                     <div className="flex-shrink-0">
                                         <img
@@ -219,7 +219,7 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                             tom@example.com
                                         </div>
                                     </div>
-                                    <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                    <button className="focus:outline-none ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <span className="sr-only">
                                             View notifications
                                         </span>
@@ -229,21 +229,21 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                                         />
                                     </button>
                                 </div>
-                                <div className="mt-3 px-2 space-y-1">
+                                <div className="mt-3 space-y-1 px-2">
                                     <a
                                         href="/dashboard/profile"
-                                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                                     >
                                         Your Profile
                                     </a>
                                     <a
                                         href="/dashboard/profile"
-                                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                                     >
                                         Settings
                                     </a>
                                     <a
-                                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                                         onClick={(e) => {
                                             e.preventDefault()
                                             Cookies.remove('bytesack-jwt-token')
@@ -258,8 +258,8 @@ export default function StackedNav({ active, user }: StackedNavProps) {
                 )}
             </Disclosure>
             <header className="bg-purple-200 shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold text-purple-900 capitalize">
+                <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+                    <h1 className="text-3xl font-bold capitalize text-purple-900">
                         {active}
                     </h1>
                 </div>

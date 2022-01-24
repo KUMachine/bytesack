@@ -35,17 +35,17 @@ const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
                 }
             }}
         >
-            <div className=" overflow-hidden p-1 border-2 rounded-full border-gray-600 dark:border-gray-400 text-gray-600 dark:text-gray-400 cursor-pointer">
+            <div className=" cursor-pointer overflow-hidden rounded-full border-2 border-gray-600 p-1 text-gray-600 dark:border-gray-400 dark:text-gray-400">
                 {mode === 'dark' && (
                     <Sun
                         size="21"
-                        className="text-yellow-300 animate__animated animate__fadeInUp"
+                        className="animate__animated animate__fadeInUp text-yellow-300"
                     />
                 )}
                 {mode === 'light' && (
                     <Moon
                         size="20"
-                        className="text-lightblue-600 animate__animated animate__fadeInDown"
+                        className="animate__animated animate__fadeInDown text-lightblue-600"
                     />
                 )}
             </div>

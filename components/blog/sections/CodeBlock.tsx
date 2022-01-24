@@ -15,9 +15,9 @@ const CodeBlock = ({
 }: CodeBlockProps) => {
     const [copied, setCopied] = useState<boolean>(false)
     return (
-        <div className="w-full relative" dir="ltr">
+        <div className="relative w-full" dir="ltr">
             <SyntaxHighlighter
-                className="rounded-md mx-2 text-base leading-8"
+                className="mx-2 rounded-md text-base leading-8"
                 language={language}
                 style={{ ...syntaxTheme }}
             >
@@ -42,7 +42,7 @@ const CodeBlock = ({
                 )}
             </div>
             {showLanguage && (
-                <div className="absolute bottom-1 text-gray-400 text-xs right-8 uppercase font-mono">
+                <div className="absolute bottom-1 right-8 font-mono text-xs uppercase text-gray-400">
                     {language}
                 </div>
             )}

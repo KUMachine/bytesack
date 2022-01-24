@@ -14,29 +14,29 @@ const Hamburger = ({ className }: HamburgerProps) => {
     return (
         <div className={className}>
             <div
-                className="mx-0.5 text-gray-600 dark:text-gray-200 cursor-pointer"
+                className="mx-0.5 cursor-pointer text-gray-600 dark:text-gray-200"
                 onClick={() => setToggle(!toggle)}
             >
                 <MenuIcon size="36" />
             </div>
             {toggle && (
                 <div
-                    className="fixed h-screen w-full z-40 bg-gray-600 bg-opacity-70 px-2 py-4 top-0 right-0 animate__animated animate__fadeIn"
+                    className="animate__animated animate__fadeIn fixed top-0 right-0 z-40 h-screen w-full bg-gray-600 bg-opacity-70 px-2 py-4"
                     onClick={(e) => {
                         setToggle(!toggle)
                     }}
                 >
                     <div
-                        className="bg-light dark:bg-dark-blue p-3 h-auto w-full rounded-lg shadow-lg animate__animated animate__fadeInDown"
+                        className="animate__animated animate__fadeInDown h-auto w-full rounded-lg bg-light p-3 shadow-lg dark:bg-dark-blue"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div
-                            className="text-gray-500 dark:text-gray-400 cursor-pointer"
+                            className="cursor-pointer text-gray-500 dark:text-gray-400"
                             onClick={() => setToggle(!toggle)}
                         >
                             <CrossIcon size="28" />
                         </div>
-                        <div className="my-3 text-xl font-bold text-gray-500 dark:text-gray-400 space-y-3">
+                        <div className="my-3 space-y-3 text-xl font-bold text-gray-500 dark:text-gray-400">
                             <Link href="/">
                                 <a className="block border-b border-gray-500 px-1 py-0.5">
                                     Home

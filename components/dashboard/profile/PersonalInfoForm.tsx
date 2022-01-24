@@ -12,8 +12,8 @@ export default function PersonalInfoForm({ user }: PersonalInfoFormProps) {
     const [email, setEmail] = useState(user.email)
     return (
         <form action="#" method="POST" className="mt-4">
-            <div className="font-bold mx-1">Personal info:</div>
-            <div className="bg-white shadow rounded-lg">
+            <div className="mx-1 font-bold">Personal info:</div>
+            <div className="rounded-lg bg-white shadow">
                 <div className="px-4 py-5 sm:p-6">
                     <div className="grid grid-cols-6 gap-6">
                         <div className="col-span-6 sm:col-span-3">
@@ -29,7 +29,7 @@ export default function PersonalInfoForm({ user }: PersonalInfoFormProps) {
                                 name="first-name"
                                 id="first-name"
                                 autoComplete="given-name"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
 
@@ -46,7 +46,7 @@ export default function PersonalInfoForm({ user }: PersonalInfoFormProps) {
                                 name="last-name"
                                 id="last-name"
                                 autoComplete="family-name"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-3">
@@ -60,7 +60,7 @@ export default function PersonalInfoForm({ user }: PersonalInfoFormProps) {
                                 value={username}
                                 type="text"
                                 id="username"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-3">
@@ -76,15 +76,15 @@ export default function PersonalInfoForm({ user }: PersonalInfoFormProps) {
                                 name="email-address"
                                 id="email-address"
                                 autoComplete="email"
-                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
                     </div>
                 </div>
-                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                     <button
                         type="submit"
-                        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="focus:outline-none inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         Save
                     </button>

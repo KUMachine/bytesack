@@ -18,9 +18,9 @@ export default function LangToggle() {
                 <div>
                     <Menu.Button
                         as="div"
-                        className="inline-flex justify-center w-full py-2"
+                        className="inline-flex w-full justify-center py-2"
                     >
-                        <div className="text-sm overflow-hidden p-1 border-2 rounded-full border-gray-600 dark:border-gray-400 text-lightblue-600 dark:text-gray-300 cursor-pointer">
+                        <div className="cursor-pointer overflow-hidden rounded-full border-2 border-gray-600 p-1 text-sm text-lightblue-600 dark:border-gray-400 dark:text-gray-300">
                             {<LangIcon size="20" />}
                         </div>
                     </Menu.Button>
@@ -37,11 +37,11 @@ export default function LangToggle() {
                     <Menu.Items
                         className={`absolute ${
                             locale === 'en' ? 'right-0' : 'left-0'
-                        } mt-2 origin-top-right bg-white dark:bg-dark-blue dark:text-gray-300 divide-y divide-gray-100 dark:divide-gray-500 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+                        } focus:outline-none mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:divide-gray-500 dark:bg-dark-blue dark:text-gray-300`}
                     >
                         <div className="px-1 py-1">
                             <Menu.Item>
-                                <button className="group flex rounded-md items-center w-full px-2 py-1 text-sm">
+                                <button className="group flex w-full items-center rounded-md px-2 py-1 text-sm">
                                     {locale === 'en' ? (
                                         <CheckCircle
                                             size="20"
@@ -58,7 +58,7 @@ export default function LangToggle() {
                         </div>
                         <div className="px-1 py-1">
                             <Menu.Item>
-                                <button className="group flex rounded-md items-center w-full px-2 py-1 text-sm">
+                                <button className="group flex w-full items-center rounded-md px-2 py-1 text-sm">
                                     {locale === 'ku' ? (
                                         <CheckCircle
                                             size="20"
