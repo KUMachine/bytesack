@@ -37,20 +37,20 @@ export default function Blog(props: any) {
     return (
         <div>
             <StackedNav active="blog" user={user} />
-            <main className="bg-snow min-h-screen">
-                <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <main className="min-h-screen bg-snow">
+                <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                     <Disclosure>
                         <div>
                             <div className="flex items-center justify-between">
                                 <p className="text-xl text-purple-900">
                                     Your blog posts
                                 </p>
-                                <Disclosure.Button className="bg-purple-600 text-gray-100 px-2 py-2 font-semibold rounded-lg">
+                                <Disclosure.Button className="rounded-lg bg-purple-600 px-2 py-2 font-semibold text-gray-100">
                                     New Post
                                 </Disclosure.Button>
                             </div>
                             <hr className="my-1 border border-purple-200" />
-                            <Disclosure.Panel className="text-gray-500 animate__animated animate__fadeIn">
+                            <Disclosure.Panel className="animate__animated animate__fadeIn text-gray-500">
                                 <BlogPostForm />
                             </Disclosure.Panel>
                         </div>

@@ -7,11 +7,11 @@ export default function _404() {
     return (
         <>
             <Header className="sticky top-0 z-30" />
-            <div className="py-24 md:py-44 px-5 md:px-16 space-y-5 dark:bg-dark-blue dark:text-gray-400">
-                <div className="text-lg md:text-xl font-bold text-pink-600 dark:text-pink-400">
+            <div className="space-y-5 py-24 px-5 dark:bg-dark-blue dark:text-gray-400 md:py-44 md:px-16">
+                <div className="text-lg font-bold text-pink-600 dark:text-pink-400 md:text-xl">
                     500 ERROR
                 </div>
-                <div className="text-4xl md:text-6xl font-black">
+                <div className="text-4xl font-black md:text-6xl">
                     Internal server error
                 </div>
                 <div className="text-lg md:text-xl">
@@ -19,7 +19,7 @@ export default function _404() {
                 </div>
                 <Link href="/">
                     <a>
-                        <div className="text-xl flex items-center text-lightblue-500 my-2">
+                        <div className="my-2 flex items-center text-xl text-lightblue-500">
                             <span>Go back home </span>
                             <ArrowRight />
                         </div>

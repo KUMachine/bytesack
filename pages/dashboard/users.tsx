@@ -22,10 +22,10 @@ export default function Users(props: any) {
         <div>
             <StackedNav active="users" user={props.user} />
             <main className="bg-snow">
-                <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                     {/* Replace with your content */}
                     <div className="px-4 py-6 sm:px-0">
-                        <div className="border-4 border-dashed border-orange-200 rounded-lg h-96" />
+                        <div className="h-96 rounded-lg border-4 border-dashed border-orange-200" />
                     </div>
                     {/* /End replace */}
                 </div>

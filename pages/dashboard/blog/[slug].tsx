@@ -39,8 +39,8 @@ export default function BlogPostEdit(props: any) {
     return (
         <div>
             <StackedNav active="blog" user={user} />
-            <main className="bg-snow min-h-screen">
-                <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <main className="min-h-screen bg-snow">
+                <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                     <div>{post.slug}</div>
                     <div className="flex justify-center">

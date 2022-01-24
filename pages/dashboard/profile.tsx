@@ -30,8 +30,8 @@ export default function Profile(props: any) {
     return (
         <div>
             <StackedNav active="profile" user={user} />
-            <main className="bg-rice min-h-screen">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <main className="min-h-screen bg-rice">
+                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div
                         style={{
                             backgroundImage: `url(${user.cover})`,
@@ -39,10 +39,10 @@ export default function Profile(props: any) {
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                         }}
-                        className="h-60 relative"
+                        className="relative h-60"
                     >
                         <div className="absolute bottom-0 left-5">
-                            <span className="inline-block h-36 w-36 rounded-full overflow-hidden bg-gray-100 border-4 border-yellow-300">
+                            <span className="inline-block h-36 w-36 overflow-hidden rounded-full border-4 border-yellow-300 bg-gray-100">
                                 <Image
                                     className="h-full w-full text-gray-300"
                                     src={user.avatar}
