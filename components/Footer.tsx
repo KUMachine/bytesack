@@ -60,7 +60,7 @@ const Footer = () => {
                 </div>
                 <hr className="my-10 dark:border-gray-600" />
                 <div className="text-center text-base">
-                    &copy; 2020 Bytesack, Inc, All rights reserved
+                    &copy; 2020 Bytesack, Inc, All rights reserved.
                 </div>
             </div>
         </div>
