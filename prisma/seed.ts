@@ -4,7 +4,7 @@ export async function seed() {
     await prisma.$connect()
     await prisma.user.create({
         data: {
-            firstname: 'areyano',
+            firstname: 'areyan',
             lastname: 'naaman',
             username: 'areyan',
             email: 'areyan@bytesack.com',
